@@ -1,1 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Softy Pinko Website</title>
 
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+  <style>
+body{font-family:'Playfair Display',serif;color:#000;line-height:1.7}
+a{color:#d9534f;transition:all .3s}
+a:hover{color:#c9302c;text-decoration:none}
+.btn-primary{background:#ff589e;border-color:#ff589f;border-radius:30px;padding:.6rem 1.5rem}
+.btn-primary:hover{background:#8261ee;border-color:#8261ee}
+.section{padding:80px 0}
+.colored{background:#f9f9f9}
+.navbar.bg-body-tertiary{background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);position:fixed;width:100%;top:0;left:0;z-index:1030}
+body{padding-top:70px}
+.navbar-brand img{max-height:45px}
+.navbar-nav .nav-link{color:#000;font-weight:500;text-transform:uppercase;font-size:.85rem;padding:.5rem 1rem}
+.navbar-nav .nav-link.active,.navbar-nav .nav-link:hover{color:#ff589e}
+.hero{    background: url('assets/banner-bg.png') center/cover no-repeat;color: white;padding: 200px 0;text-align: center;}
+.hero h1{font-size:3.5rem;font-weight:700;margin-bottom:1rem}
+.hero p{font-size:1.2rem;margin-bottom:2rem}
+.section{display:flex;justify-content:center;margin-top:-104px}
+.section .card{margin:0 auto 1.5rem;max-width:18rem;text-align:center;display:flex;grid-row:6px}
+.section .card img{display:block;margin:1rem auto;width:90px;height:90px;object-fit:cover;border-radius:50%}
+.section .card img:hover{cursor:pointer}
+.section .card .card-body{padding:1rem}
+.section .card .card-title{font-weight:600;margin-bottom:.5rem}
+.section .card .card-text{color:#6c7293}
+@media(min-width:768px){.section .card{margin:0 .5rem 1.5rem;display:inline-block}}
+.img-left-text-right,.img-right-text-left{display:flex;align-items:center;gap:20.5rem;margin-bottom:3rem}
+.img-left-text-right img,.img-right-text-left img{max-width:100%;height:auto;border-radius:5px}
+.right-img-left-text{display: flex;flex-direction: row-reverse;align-items: center;gap: 20.5rem;margin-bottom: 3rem}
+.right-img-left-text img{max-width:100%;height:auto;border-radius:5px}
+@media(max-width:400px){.right-img-left-text{flex-direction:column;text-align:center}}
+@media(max-width:767px){.img-left-text-right,.img-right-text-left{flex-direction:column;text-align:center}}
+.work-process{text-align:center;padding:3rem 0}
+.work-process .card{margin:1rem auto;max-width:18rem;text-align:left}
+.work-process .card img{height:auto;object-fit:cover;margin:1rem auto;display:flex}
+.work-process .card-body{padding:1rem}
+.work-process .card-title{font-weight:600;margin-bottom:.5rem}
+.work-process .card-text{color:#7a7878}
+@media(min-width:768px){.work-process .card{margin:1rem;display:inline-block}}
+.testimonials{text-align:center;padding:3rem 0}
+.testimonials .card{margin:1rem auto;max-width:18rem;text-align:left}
+.testimonials .card img{height:auto;object-fit:cover;margin:1rem auto;display:flex}
+.testimonials .card-body{padding:1rem}
+.testimonials .card-title{font-weight:600;margin-bottom:.25rem}
+.testimonials .card-text{color:#6c7293}
+.testimonials span{font-size:19px;color:#ff589e}
+@media(min-width:768px){.testimonials .card{margin:1rem;display:inline-block}}
+.pricing .card{text-align:center;margin:1rem}
+.pricing-title {font-size: 2.5rem;display: flex;justify-content: center;}
+.pricing-text {margin-top: 0;margin-bottom: 1rem;display: flex;justify-content: center;}
+.price-tag{max-width: 12rem;margin-left: auto;margin-right: auto;display:inline-block;background:#fff;padding:.5rem 1.2rem;border-radius:25px;box-shadow:0 2px 5px rgba(0,0,0,.15);font-size:1rem;font-weight:600;color:#333}
+.features ul{margin:0;padding-left:1.2rem;text-align:left}
+.features li{margin-bottom:.2rem}
+.price-tag{display:inline-block;background:#8261ee;padding:.5rem 1.2rem;border-radius:25px;box-shadow:0 2px 5px rgba(0,0,0,.15);font-family:Arial,sans-serif;font-size:1.2rem;font-weight:600;color:#fff}
+.features{display:inline-block;background:#fff;padding:1rem 1.5rem;line-height:1.6;color:#333;text-align:left}
+.features ul{margin:0;padding-left:1.2rem;list-style-type:none}
+.features li{margin-bottom:.2rem}
+.card-body .btn{margin-top:1rem;max-width: 12rem;margin-left: auto;margin-right: auto}
+.stats{text-align:center;padding:2rem 0;margin-top: 8rem;margin-bottom: 8rem;}
+.stat-item{margin:1rem;display:inline-block}
+.stat-item img{height:auto;margin-top:.5rem}
+.stat-item p{margin:0;font-size:30px;font-weight:600}
+.blog-entries{text-align:center;padding:2rem 0}
+.blog-entries .card{text-align:center;margin:1rem}
+.blog-entries .card img{width:100%;height:auto;object-fit:cover}
+.blog-entries .card-body{padding:1rem}
+.blog-entries .card-title{font-weight:600;margin-bottom:.5rem}
+.blog-entries .card-text{color:#6c7293;margin-bottom:1rem}
+.blog-entries .btn{margin-top:.5rem}
+footer{background:#8261ee;color:#fff;padding:60px 0 20px;margin-top: 8rem;}
+footer .social li{display:inline-block;margin:0 10px}
+footer .social li a{color:#fff;font-size:1.2rem}
+footer .copyright{margin-top:30px;font-size:.9rem;color:#aaa}
+@media(max-width:991px){.hero h1{font-size:2.5rem}
+.hero p{font-size:1rem}}
+</style>
+</head>
+
+<body>
+
+<!-- ***** Navbar ***** -->
+ <section class="header-area">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="assets/logo.png" alt="Delicious"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#work-process">Work Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing-tables">Pricing Tables</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog-entries">Blog Entries</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
+
+<!-- ***** Hero ***** -->
+ <section class="hero" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>We provide the best <strong> strategy</strong><br>
+            to grow up your <strong>business</strong>
+        </h1>
+        <p>Softy Pinko is a professional Bootstrap 4.0 theme designed by Template Mo<br>
+             for your company at absolutely free of charge</p>
+        <a href="#about" class="btn btn-primary">DISCOVER MORE</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ***** About ***** -->
+<section class="section" id="about">
+  <div class="card">
+  <img src="assets/icon.avif" width="90px";
+    height="90px">
+  <div class="card-body">
+    <h5 class="card-title">Modern Strategy</h5>
+    <p class="card-text">Customize anything in this template to fit your website needs</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="assets/icon.avif" width="90px";
+    height="90px">
+  <div class="card-body">
+    <h5 class="card-title">Best Relationship</h5>
+    <p class="card-text">Contact us immediately if you have a question in mind</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="assets/icon.avif" width="90px";
+    height="90px" >
+  <div class="card-body">
+    <h5 class="card-title">Ultimate Marketing</h5>
+    <p class="card-text">You just need to tell your friends about our free templates</p>
+  </div>
+</div>
+</section>
+
+ <!-- Image Left – Text Right -->
+  <div class="container my-5">
+    <div class="img-left-text-right">
+      <img src="assets/left-image.png" alt="Left Image">
+      <div class="right-text">
+        <h2 class="left-heading">Let’s discuss about your project</h2>
+        <p>Nullam sit amet purus libero. Etiam ullamcorper nisl ut augue blandit,
+           at finibus leo efficitur. Nam gravida purus non sapien auctor,
+           ut aliquam magna ullamcorper.</p>
+      </div>
+    </div>
+
+    <!-- Image Right – Text Left -->
+      <div class="container my-5">
+  <div class="right-img-left-text">
+    <img src="assets/right-image.png" alt="Right Image">
+    <div class="left-text">
+      <h2 class="section-title">We can help you to grow your business</h2>
+      <p>Aenean pretium, ipsum et porttitor auctor, metus ipsum iaculis nisi,
+         a bibendum lectus libero vitae urna. Sed id leo eu dolor luctus
+         congue sed eget ipsum. Nunc nec luctus libero. Etiam quis dolor elit.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ***** Work Process ***** -->
+ <section class="work-process" id="work-process">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Work Process</h1>
+      <p>Aenean nec tempor metus. Maecenas ligula dolor, commodo in imperdiet interdum, vehicula ut ex. Donec ante diam.</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/work-process-item-01.png" alt="Get Ideas">
+        <div class="card-body">
+          <h5 class="card-title">Get Ideas</h5>
+          <p class="card-text">Godard pabst prism fam cliche.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/work-process-item-01.png" alt="Sketch Up">
+        <div class="card-body">
+          <h5 class="card-title">Sketch Up</h5>
+          <p class="card-text">Godard pabst prism fam cliche.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/work-process-item-01.png" alt="Discuss">
+        <div class="card-body">
+          <h5 class="card-title">Discuss</h5>
+          <p class="card-text">Godard pabst prism fam cliche.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/work-process-item-01.png" alt="Revise">
+        <div class="card-body">
+          <h5 class="card-title">Revise</h5>
+          <p class="card-text">Godard pabst prism fam cliche.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/work-process-item-01.png" alt="Approve">
+        <div class="card-body">
+          <h5 class="card-title">Approve</h5>
+          <p class="card-text">Godard pabst prism fam cliche.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/work-process-item-01.png" alt="Launch">
+        <div class="card-body">
+          <h5 class="card-title">Launch</h5>
+          <p class="card-text">Godard pabst prism fam cliche.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ***** Testimonials ***** -->
+ <section class="testimonials" id="testimonials">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>What do they say?</h1>
+      <p>Donec tempus, sem non rutrum imperdiet, lectus orci fringilla nulla,<br> at accumsan elit eros a turpis. Ut sagittis lectus libero.</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/testimonial-icon.png" alt="Testimonial 1">
+        <div class="card-body">
+          <p class="card-text">Proin a neque nisi. Nam ipsum nisi, venenatis ut nulla quis, egestas scelerisque orci. Maecenas a finibus odio.</p>
+          <h3 class="card-title">Catherine Soft</h3>
+          <span>Managing Director</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/testimonial-icon.png" alt="Testimonial 2">
+        <div class="card-body">
+          <p class="card-text">Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
+          <h3 class="card-title">Kelvin Wood</h3>
+          <span>Digital Marketer</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/testimonial-icon.png" alt="Testimonial 3">
+        <div class="card-body">
+          <p class="card-text">Quisque diam odio, maximus ac consectetur eu, auctor non lorem. Cras quis est non ante ultrices molestie. Ut vehicula et diam at aliquam.</p>
+          <h3 class="card-title">David Martin</h3>
+          <span>Website Manager</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ***** Pricing Plans ***** -->
+ <section class="pricing" id="pricing-tables">
+  <div>
+  <div class="row justify-content-center text-center">
+    <h1 class="pricing-title">Pricing Plans</h1>
+    <p class="pricing-text">Donec vulputate urna sed rutrum venenatis. Cras consequat magna<br>
+       quis arcu elementum, quis congue risus volutpat.</p>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Starter</h5>
+          <div class="row justify-content-center">
+          <div class="price-tag">$14.50 monthly</div>
+          </div>
+          <div class="features">
+            <ul>
+              <li>60 GB space</li>
+              <li>600 GB transfer</li>
+              <li>Pro Design Panel</li>
+              <li>15-minute support</li>
+              <li>Unlimited Emails</li>
+              <li>24/7 Security</li>
+            </ul>
+          </div>
+          <div class="row justify-content-center">
+          <a href="#" class="btn btn-primary">PURCHASE NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Premium</h5>
+          <div class="row justify-content-center">
+          <div class="price-tag">$14.50 monthly</div>
+          </div>
+          <div class="features">
+            <ul>
+              <li>120 GB space</li>
+              <li>1200 GB transfer</li>
+              <li>Pro Design Panel</li>
+              <li>15-minute support</li>
+              <li>Unlimited Emails</li>
+              <li>24/7 Security</li>
+            </ul>
+          </div>
+          <div class="row justify-content-center">
+          <a href="#" class="btn btn-primary">PURCHASE NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Advanced</h5>
+          <div class="row justify-content-center">
+          <div class="price-tag">$14.50 monthly</div>
+          </div>
+          <div class="features">
+            <ul>
+              <li>250 GB space</li>
+              <li>5000 GB transfer</li>
+              <li>Pro Design Panel</li>
+              <li>15-minute support</li>
+              <li>Unlimited Emails</li>
+              <li>24/7 Security</li>
+            </ul>
+          </div>
+          <div class="row justify-content-center">
+          <a href="#" class="btn btn-primary">PURCHASE NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- ***** Item ***** -->
+<section class="stats">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="stat-item">
+        <p>126 Projects</p>
+        <img src="assets/buble.png" alt="Projects">
+      </div>
+      <div class="stat-item">
+        <p>63 Happy Clients</p>
+        <img src="assets/buble.png" alt="Clients">
+      </div>
+      <div class="stat-item">
+        <p>18 Awards Wins</p>
+        <img src="assets/buble.png" alt="Awards">
+      </div>
+      <div class="stat-item">
+        <p>27 Countries</p>
+        <img src="assets/buble.png" alt="Countries">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ***** Blog Entries ***** -->
+<section class="blog-entries" id="blog-entries">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Blog Entries</h1>
+      <p>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet<br> nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/blog-item-01.png" alt="Blog 1">
+        <div class="card-body">
+          <h5 class="card-title">Vivamus ac vehicula dui</h5>
+          <p class="card-text">Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.</p>
+          <a href="#" class="btn btn-primary">READ MORE</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/blog-item-02.png" alt="Blog 2">
+        <div class="card-body">
+          <h5 class="card-title">Phasellus convallis augue</h5>
+          <p class="card-text">Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.</p>
+          <a href="#" class="btn btn-primary">READ MORE</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card">
+        <img src="assets/blog-item-03.png" alt="Blog 3">
+        <div class="card-body">
+          <h5 class="card-title">Nam gravida purus non</h5>
+          <p class="card-text">Maecenas eu erat vitae dui convallis consequat vel gravida nulla. Vestibulum finibus euismod odio, ut tempus enim varius eu.</p>
+          <a href="#" class="btn btn-primary">READ MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ***** Contact Us ***** -->
+<section class="contact" id="contact-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-5">
+        <h2>Talk To Us</h2>
+        <p>Maecenas pellentesque ante faucibus lectus vulputate sollicitudin.<br>
+             Cras feugiat hendrerit semper.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-90">
+      <div class="col-lg-6">
+        <form>
+          <div class="row">
+            <div class="col-lg-6 mb-3"><input type="text" class="form-control" placeholder="Name"></div>
+            <div class="col-lg-6 mb-3"><input type="email" class="form-control" placeholder="Email"></div>
+            <div class="col-lg-12 mb-3"><textarea class="form-control" rows="3" placeholder="Message"></textarea></div>
+            <div class="col-lg-12 text-center"><button class="btn btn-primary">SEND MESSAGE</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ***** Footer ***** -->
+<footer class="text-light py-4">
+  <div class="container text-center">
+    <div class="social-icons mb-3">
+      <a href="#" class="mx-2"><img src="assets/facebook (1).png" alt="Facebook" width="24"></a>
+      <a href="#" class="mx-2"><img src="assets/twitter.png" alt="Twitter" width="24"></a>
+      <a href="#" class="mx-2"><img src="assets/instagram-logo.png" alt="Instagram" width="24"></a>
+      <a href="#" class="mx-2"><img src="assets/wifi-connection.png" alt="LinkedIn" width="24"></a>
+    </div>
+    <p class="small mb-0">Copyright © 2020 Softy Pinko Company - Design: TemplateMo.</p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
